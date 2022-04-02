@@ -1,5 +1,6 @@
 {
   "name": "optical-flow",
+  "description": "Realtime optical flow calculation in the browser",
   "private": true,
   "version": "0.0.0",
   "scripts": {
