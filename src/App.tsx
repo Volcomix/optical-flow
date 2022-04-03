@@ -1,13 +1,16 @@
 import './App.css'
 
-// Makes file handled by git lfs work in GitHub Pages
-const sintelUrl =
-  'https://media.githubusercontent.com/media/volcomix/optical-flow/main/src/assets/videos/sintel-2048-surround.mp4'
+const videosUrl =
+  'https://github.com/volcomix/optical-flow/releases/download/assets/videos/v1.0.0'
 
 function App() {
   return (
     <div className="App">
-      <video className="App-videoPreview" src={sintelUrl} controls />
+      <video
+        className="App-videoPreview"
+        src={`${videosUrl}/sintel-2048-surround.mp4`}
+        controls
+      />
     </div>
   )
 }
