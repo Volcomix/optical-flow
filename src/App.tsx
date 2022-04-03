@@ -8,6 +8,7 @@ function App() {
     <div className="App">
       <video
         className="App-videoPreview"
+        aria-label="Input"
         src={`${videosUrl}/sintel-2048-surround.mp4`}
         controls
       />
