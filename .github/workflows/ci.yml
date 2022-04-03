@@ -19,6 +19,7 @@ jobs:
           key: ${{ runner.os }}-browsers-${{ hashFiles('**/yarn.lock') }}
 
       - name: Install Playwright
+        if: steps.cache-browsers.outputs.cache-hit != 'true'
         run: yarn playwright install --with-deps
 
       - name: Test
