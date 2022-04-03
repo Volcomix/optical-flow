@@ -1,7 +1,31 @@
 name: CI
 on: [push]
 jobs:
-  ci:
+  test:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Install Playwright
+        run: yarn playwright install --with-deps
+
+      - name: Test
+        run: yarn test
+
+      - name: Upload report
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: test-report
+          path: playwright-report/
+          retention-days: 30
+
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -14,7 +38,7 @@ jobs:
         run: yarn build
 
       - name: Deploy
-        if: ${{ github.ref == 'refs/heads/main' }}
+        if: github.ref == 'refs/heads/main'
         working-directory: dist
         run: |
           git init
