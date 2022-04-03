@@ -26,7 +26,6 @@ jobs:
           retention-days: 30
 
   build-and-deploy:
-    if: always()
     needs: test
     runs-on: ubuntu-latest
     steps:
@@ -37,12 +36,10 @@ jobs:
         run: yarn
 
       - name: Build
-        # TODO Remove the condition
-        if: success()
         run: yarn build
 
       - name: Deploy
-        if: success() && github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/main'
         working-directory: dist
         run: |
           git init

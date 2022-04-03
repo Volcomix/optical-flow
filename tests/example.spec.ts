@@ -29,7 +29,7 @@ test.describe('New Todo', () => {
       TODO_ITEMS[1],
     ])
 
-    await checkNumberOfTodosInLocalStorage(page, 1)
+    await checkNumberOfTodosInLocalStorage(page, 2)
   })
 
   test('should clear text input field when an item is added', async ({
