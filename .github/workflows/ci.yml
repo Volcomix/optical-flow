@@ -37,6 +37,8 @@ jobs:
         run: yarn
 
       - name: Build
+        # TODO Remove the condition
+        if: success()
         run: yarn build
 
       - name: Deploy
