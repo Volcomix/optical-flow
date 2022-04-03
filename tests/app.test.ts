@@ -1,9 +1,19 @@
 import { expect, test } from '@playwright/test'
 
-test('shows sintel movie as default input', async ({ page }) => {
+test.beforeEach(async ({ page }) => {
   await page.goto('/')
-  await expect(page.locator('video[aria-label="Input"]')).toHaveAttribute(
-    'src',
-    /sintel-2048-surround.mp4$/,
-  )
+})
+
+test('lists available input videos', async ({ page }) => {
+  const inputVideoNames = await page
+    .locator('[aria-label="Input videos"] li')
+    .allTextContents()
+
+  expect(inputVideoNames).toEqual(['Sintel'])
+})
+
+test('previews sintel movie as default input', async ({ page }) => {
+  await expect(
+    page.locator('[aria-label="Input video preview"]'),
+  ).toHaveAttribute('src', /sintel-2048-surround.mp4$/)
 })

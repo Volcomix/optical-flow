@@ -1,7 +1,11 @@
 .App {
   height: 100vh;
   display: grid;
-  grid-template: 'video-inputs video-preview' 1fr / 1fr 1fr;
+  grid-template: 'input-videos video-preview' 1fr / 1fr 1fr;
+}
+
+.App-inputVideos {
+  grid-area: input-videos;
 }
 
 .App-videoPreview {
