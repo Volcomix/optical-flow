@@ -5,11 +5,9 @@ test.beforeEach(async ({ page }) => {
 })
 
 test('lists available input videos', async ({ page }) => {
-  const inputVideoNames = await page
-    .locator('[aria-label="Input videos"] li')
-    .allTextContents()
-
-  expect(inputVideoNames).toEqual(['Sintel'])
+  await expect(page.locator('[aria-label="Input videos"] li')).toHaveText([
+    'Sintel',
+  ])
 })
 
 test('previews sintel movie as default input', async ({ page }) => {
