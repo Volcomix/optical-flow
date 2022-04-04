@@ -1,5 +1,6 @@
 .App {
-  height: 100vh;
+  margin: 24px;
+  height: calc(100vh - 48px);
   display: grid;
   grid-template: 'input-videos video-preview' 1fr / 1fr 1fr;
 }
@@ -9,6 +10,7 @@
 }
 
 .App-videoPreview {
-  grid-area: video-preview;
   width: 100%;
+  grid-area: video-preview;
+  border-radius: 16px;
 }
