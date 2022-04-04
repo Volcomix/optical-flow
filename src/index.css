@@ -5,8 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: white;
-  background-color: rgb(18, 24, 42);
+  color: rgb(var(--color-on-background));
+  background-color: rgb(var(--color-background));
   background-image: radial-gradient(
       circle at 10% 0%,
       rgba(0, 90, 255, 0.28),
@@ -19,4 +19,9 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+:root {
+  --color-background: 18, 24, 42;
+  --color-on-background: 255, 255, 255;
 }
