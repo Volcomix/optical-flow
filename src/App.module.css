@@ -3,6 +3,7 @@
   height: calc(100vh - 48px);
   display: grid;
   grid-template: 'input-videos input-video-preview' 1fr / 1fr 1fr;
+  column-gap: 16px;
 }
 
 .inputVideos {
@@ -10,7 +11,5 @@
 }
 
 .inputVideoPreview {
-  width: 100%;
   grid-area: input-video-preview;
-  border-radius: 16px;
 }

@@ -1,0 +1,8 @@
+.root {
+  margin: 0;
+  border: 1px solid rgba(var(--color-on-background), 0.1);
+  border-radius: 16px;
+  padding: 24px 16px;
+  list-style: none;
+  background-color: rgba(var(--color-background), 0.6);
+}
